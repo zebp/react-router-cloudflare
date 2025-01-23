@@ -1,0 +1,23 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "react-router-cloudflare",
+  "main": "./app/worker.ts",
+  "compatibility_date": "2024-12-05",
+  "compatibility_flags": ["nodejs_compat"],
+  // Where the static asses built by Vite will be served out of.
+  "assets": {
+    "directory": "./dist/client"
+  },
+  // Workers Logs
+  // Docs: https://developers.cloudflare.com/workers/observability/logs/workers-logs/
+  // Configuration: https://developers.cloudflare.com/workers/observability/logs/workers-logs/#enable-workers-logs
+  "observability": {
+    "enabled": true
+  },
+  "kv_namespaces": [
+    {
+      "binding": "testing",
+      "id": "de315c1fc9094edb8608b10c27dd16fa"
+    }
+  ]
+}
